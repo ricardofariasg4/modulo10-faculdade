@@ -73,6 +73,10 @@ const ListarTarefa = () => {
     setOpenEditar(true)
   };
 
+  useEffect(() => {
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+  }, [tarefas]);
+
   const handleDeletar = (id) => {
     setTarefas(current =>
       current.filter(tarefa => {
